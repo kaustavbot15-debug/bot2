@@ -7,7 +7,7 @@ from aiohttp import web
 from aiohttp.http_exceptions import BadStatusLine
 from FileStream.bot import multi_clients, work_loads, FileStream
 from FileStream.config import Telegram, Server
-from FileStream.exceptions import FIleNotFound, InvalidHash
+from FileStream.server.exceptions import FIleNotFound, InvalidHash
 from FileStream import utils, StartTime, __version__
 from FileStream.utils.render_template import render_page
 
