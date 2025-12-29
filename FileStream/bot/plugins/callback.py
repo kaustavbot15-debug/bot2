@@ -7,7 +7,7 @@ from FileStream.utils.translation import LANG, BUTTON
 from FileStream.utils.bot_utils import gen_link
 from FileStream.utils.database import Database
 from FileStream.utils.human_readable import humanbytes
-from FileStream.exceptions import FIleNotFound
+from FileStream.server.exceptions import FIleNotFound
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 from pyrogram.file_id import FileId, FileType, PHOTO_TYPES
 from pyrogram.enums.parse_mode import ParseMode
