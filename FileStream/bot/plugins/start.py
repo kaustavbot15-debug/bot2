@@ -2,7 +2,7 @@ import logging
 import math
 from FileStream import __version__
 from FileStream.bot import FileStream
-from FileStream.exceptions import FIleNotFound
+from FileStream.server.exceptions import FIleNotFound
 from FileStream.utils.bot_utils import gen_linkx, verify_user
 from FileStream.config import Telegram
 from FileStream.utils.database import Database
