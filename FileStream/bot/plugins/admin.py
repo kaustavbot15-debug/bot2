@@ -9,7 +9,7 @@ import datetime
 from FileStream.utils.broadcast_helper import send_msg
 from FileStream.utils.database import Database
 from FileStream.bot import FileStream
-from FileStream.exceptions import FIleNotFound
+from FileStream.server.exceptions import FIleNotFound
 from FileStream.config import Telegram, Server
 from pyrogram import filters, Client
 from pyrogram.types import Message
