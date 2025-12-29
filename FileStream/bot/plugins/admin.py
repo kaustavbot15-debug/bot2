@@ -9,7 +9,7 @@ import datetime
 from FileStream.utils.broadcast_helper import send_msg
 from FileStream.utils.database import Database
 from FileStream.bot import FileStream
-from FileStream.server.exceptions import FIleNotFound
+from FileStream.exceptions import FIleNotFound
 from FileStream.config import Telegram, Server
 from pyrogram import filters, Client
 from pyrogram.types import Message
@@ -155,6 +155,5 @@ async def sts(c: Client, m: Message):
         text=f"**Fɪʟᴇ Dᴇʟᴇᴛᴇᴅ Sᴜᴄᴄᴇssғᴜʟʟʏ !** ",
         quote=True
     )
-
 
 
