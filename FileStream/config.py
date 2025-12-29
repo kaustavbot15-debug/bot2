@@ -9,7 +9,11 @@ class Telegram:
     BOT_TOKEN = str(env.get("BOT_TOKEN"))
     OWNER_ID = int(env.get('OWNER_ID', '7307633923'))
     WORKERS = int(env.get("WORKERS", "6"))  # 6 workers = 6 commands at once
-    DATABASE_URL = str(env.get('DATABASE_URL'))
+    DATABASE_URL = [str(env.get('DATABASE_URL', ''))]
+    for key, value in env.items():
+        if key.startswith('DATABASE_URL_') and key[13:].isdigit():
+            DATABASE_URL.append(str(value))
+    DATABASE_URL = [x for x in DATABASE_URL if x]
     UPDATES_CHANNEL = str(env.get('UPDATES_CHANNEL', "Telegram"))
     SESSION_NAME = str(env.get('SESSION_NAME', 'FileStream'))
     FORCE_SUB_ID = env.get('FORCE_SUB_ID', None)
@@ -36,6 +40,5 @@ class Server:
     URL = "http{}://{}{}/".format(
         "s" if HAS_SSL else "", FQDN, "" if NO_PORT or ".onrender.com" in FQDN else ":" + str(PORT)
     )
-
 
 
