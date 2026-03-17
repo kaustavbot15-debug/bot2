@@ -89,7 +89,8 @@ async def gen_link(_id):
     stream_link = f"{Server.URL}dl/{_id}"
     file_link = f"https://t.me/{FileStream.username}?start=file_{_id}"
 
-    if "video" in mime_type:
+    # Check if mime_type indicates a video or if it's an MKV document
+    if "video" in mime_type or "mkv" in file_name.lower():
         stream_text = LANG.STREAM_TEXT.format(file_name, file_size, stream_link, page_link, file_link)
         reply_markup = InlineKeyboardMarkup(
             [
@@ -121,7 +122,8 @@ async def gen_linkx(m:Message , _id, name: list):
     stream_link = f"{Server.URL}dl/{_id}"
     file_link = f"https://t.me/{FileStream.username}?start=file_{_id}"
 
-    if "video" in mime_type:
+    # Check if mime_type indicates a video or if it's an MKV document
+    if "video" in mime_type or "mkv" in file_name.lower():
         stream_text= LANG.STREAM_TEXT_X.format(file_name, file_size, stream_link, page_link)
         reply_markup = InlineKeyboardMarkup(
             [
