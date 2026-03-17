@@ -3,7 +3,7 @@ import time
 import motor.motor_asyncio
 from bson.objectid import ObjectId
 from bson.errors import InvalidId
-from FileStream.exceptions import FIleNotFound
+from FileStream.server.exceptions import FIleNotFound
 import asyncio
 import random
 
